@@ -1,0 +1,297 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+h4 {
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 56px;
+
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 88px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 136px;
+}
+
+@keyframes appearing {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+    /* background-color: rgb(108, 108, 108) */
+  }
+  80% {
+    opacity: 0.3
+  }
+  100% {
+    z-index: -20;
+    opacity: 1;
+    transform: translateX(0);
+    /* background-color: rgb(31, 31, 31); */
+  }
+}
+
+@keyframes appearing-longer {
+  0% {
+    transform: translateX(-10000px);
+    opacity: 0;
+    /* background-color: rgb(108, 108, 108) */
+  }
+  80% {
+    opacity: 0.3
+  }
+  100% {
+    z-index: -20;
+    opacity: 1;
+    transform: translateX(0);
+    /* background-color: rgb(31, 31, 31); */
+  }
+}
+
+@keyframes appearing-reverse {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+    /* background-color: rgb(108, 108, 108) */
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    z-index: -20;
+    transform: translateX(0);
+    opacity: 1;
+    /* background-color: rgb(31, 31, 31); */
+  }
+}
+/* header */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 17px;
+  padding-right: 20px;
+  max-width: 1440px;
+  align-items: center;
+
+
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+
+.header {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-name {
+  font-size: 24px;
+}
+
+
+/* main  */
+
+.main-content {
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-between;
+  flex: 1 0 auto;
+}
+.main-cities {
+
+  animation-name: appearing;
+  animation-duration: 0.5s;
+  background-color: none;
+  animation-timing-function: ease-out;
+  /* position: absolute; */
+  /* left: 20px; */
+
+}
+
+
+.main-cities h2 + * {
+  padding-top: 15px;
+
+}
+
+.main-visit h3 {
+  font-weight: 400;
+}
+.main-cities-text {
+  color: #7D7F7C;
+}
+.main-visit {
+  /* display: flex; */
+  max-width: 698px;
+  animation-name: appearing-reverse;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-out;
+}
+
+/* images  */
+
+.main-images {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-osaka, .image-tokyo, .tokyo-big-container {
+  max-width: 402px;
+  animation-name: appearing-longer;
+  animation-duration: 1s;
+  /* animation-delay: 0.5s; */
+}
+
+
+.image-tokyo-big img {
+  width: 100%;
+}
+
+.image-tokyo-big {
+  padding: 0 20px 0 11px;
+}
+
+.image-osaka {
+  padding-top: 84px;
+  animation-duration: 1s;
+}
+
+.image-tokyo {
+  animation-duration: 1.5s;
+}
+
+.image-tokyo-big  + * {
+  padding-top: 143px;
+  animation-duration: 2s;
+}
+
+.main-images {
+  margin-bottom: 100px;
+}
+
+
+/* media  */
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+  .main-content {
+    display: block;
+    padding-bottom: 50px;
+  }
+  .main-cities + * {
+    padding-top: 50px;
+  }
+  .main-visit {
+    margin-left: 20%;
+  }
+  .main-images {
+    flex-wrap: wrap;
+    padding: 0 50px 0 50px;
+    height: 700px;
+    /* flex-grow: 50% 50%; */
+  }
+  .image-tokyo {
+    padding-top: 200px;
+    /* top: -250px */
+  }
+  .image-osaka {
+    height: 500px;
+  }
+  .image-tokyo-big {
+    /* top: -250px; */
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .main-images {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-images div + * {
+    padding-top: 50px;
+  }
+  .main-images {
+    margin-bottom: 100px;
+  }
+  .tokyo-big-container {
+    padding-bottom: 80px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  h3 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  h2 {
+    font-size: 48px;
+    line-height: 72px;
+  }
+  h1 {
+    font-size: 72px;
+    line-height: 112px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 36px;
+    line-height: 52px;
+  }
+  h1 {
+    font-size: 56px;
+    line-height: 72px;
+  }
+  .image-tokyo img, .image-osaka img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  h2 {
+    font-size: 30px;
+    line-height: 48px;
+  }
+  h1 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+  .container {
+    /* width: 100%; */
+    padding: 0 20px 0 20px;
+  }
+}
+
